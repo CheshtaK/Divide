@@ -4,10 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.cheshta.chatapplication.RegisterActivity">
+    tools:context="com.example.cheshta.chatapplication.LoginActivity">
 
     <include
-        android:id="@+id/registerToolbar"
+        android:id="@+id/loginToolbar"
         layout="@layout/app_bar_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
@@ -20,10 +20,10 @@
         android:textColor="#000000"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Create a New Account"/>
+        android:text="Login to your account"/>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilDisplayName"
+        android:id="@+id/tilYourEmail"
         android:layout_marginTop="35dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -33,26 +33,12 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Display Name" />
-    </android.support.design.widget.TextInputLayout>
-
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilEmail"
-        android:layout_marginTop="10dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
-            android:hint="Email"/>
+            android:hint="Your Email" />
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
-        android:id="@+id/tilPassword"
+        android:id="@+id/tilLoginPassword"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
@@ -63,13 +49,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPassword"
-            android:hint="Password" />
+            android:hint="Password"/>
     </android.support.design.widget.TextInputLayout>
 
     <Button
-        android:id="@+id/btnCreateAccount"
+        android:id="@+id/btnLogin"
         android:textColor="#FFFF"
-        android:backgroundTint="@color/colorAccent"
+        android:backgroundTint="@color/colorPrimary"
         android:paddingRight="20dp"
         android:paddingLeft="20dp"
         android:layout_marginTop="10dp"
@@ -77,6 +63,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="right"
-        android:text="Create Account" />
+        android:text="Login" />
 
 </LinearLayout>

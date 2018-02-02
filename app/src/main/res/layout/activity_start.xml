@@ -5,18 +5,31 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center"
+    android:background="@color/colorPrimary"
     android:orientation="vertical"
     tools:context="com.example.cheshta.chatapplication.StartActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Welcome to Divide"
+        android:text="Welcome to Divide Chat App"
+        android:textColor="#FFFF"
         android:textSize="24sp"/>
+
+    <Button
+        android:id="@+id/btnAlready"
+        android:layout_marginTop="15dp"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="#FFFF"
+        android:text="Already have account"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <Button
         android:id="@+id/btnRegister"
         android:layout_marginTop="15dp"
+        android:textColor="@color/colorPrimary"
+        android:backgroundTint="#FFFF"
         android:text="Need a new account?"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

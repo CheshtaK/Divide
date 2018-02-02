@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class StartActivity extends AppCompatActivity {
 
-    Button btnRegister;
+    Button btnRegister, btnAlready;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,15 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent regIntent = new Intent(StartActivity.this, RegisterActivity.class);
                 startActivity(regIntent);
+            }
+        });
+
+        btnAlready = findViewById(R.id.btnAlready);
+        btnAlready.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent = new Intent(StartActivity.this, LoginActivity.class);
+                startActivity(loginIntent);
             }
         });
     }
