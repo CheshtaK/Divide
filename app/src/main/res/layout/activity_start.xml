@@ -7,7 +7,7 @@
     android:gravity="center"
     android:background="@color/colorPrimary"
     android:orientation="vertical"
-    tools:context="com.example.cheshta.chatapplication.StartActivity">
+    tools:context="com.example.cheshta.chatapplication.Activities.StartActivity">
 
     <TextView
         android:layout_width="wrap_content"

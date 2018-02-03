@@ -1,12 +1,16 @@
-package com.example.cheshta.chatapplication;
+package com.example.cheshta.chatapplication.Activities;
 
 import android.content.Intent;
+import android.support.design.widget.TabLayout;
+import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.cheshta.chatapplication.Adapters.SectionsPagerAdapter;
+import com.example.cheshta.chatapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
@@ -14,6 +18,10 @@ public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     Toolbar mainPageToolbar;
+
+    ViewPager mainPager;
+    SectionsPagerAdapter sectionsPagerAdapter;
+    TabLayout tlMain;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
         mainPageToolbar = findViewById(R.id.mainPageToolbar);
         setSupportActionBar(mainPageToolbar);
         getSupportActionBar().setTitle("Divide Chat");
+        
+        mainPager = findViewById(R.id.vpMain);
+        sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
+        mainPager.setAdapter(sectionsPagerAdapter);
+        
+        tlMain = findViewById(R.id.tlMain);
+        tlMain.setupWithViewPager(mainPager);
     }
 
     @Override
