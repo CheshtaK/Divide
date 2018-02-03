@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.cheshta.chatapplication.Activities.SettingsActivity">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/civSettingsImage"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:src="@drawable/me" />
+
+    <TextView
+        android:id="@+id/tvSettingsName"
+        android:text="Display Name"
+        android:textSize="28sp"
+        android:layout_marginTop="30dp"
+        android:layout_gravity="center"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvSettingsStatus"
+        android:text="Hi there, I'm using Divide Chat App"
+        android:textSize="22sp"
+        android:layout_marginTop="16dp"
+        android:layout_gravity="center"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnChangeName"
+        android:backgroundTint="#FFFF"
+        android:layout_gravity="center"
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp"
+        android:layout_marginTop="130dp"
+        android:textColor="@color/colorPrimaryDark"
+        android:text="Change Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnChangeStatus"
+        android:backgroundTint="@color/colorAccent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:textColor="#FFFF"
+        android:layout_gravity="center"
+        android:text="Change Status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>
