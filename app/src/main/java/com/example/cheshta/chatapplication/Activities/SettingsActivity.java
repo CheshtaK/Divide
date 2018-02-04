@@ -52,6 +52,7 @@ public class SettingsActivity extends AppCompatActivity {
 
                 tvSettingsName.setText(name);
                 tvSettingsStatus.setText(status);
+
             }
 
             @Override
