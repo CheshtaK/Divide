@@ -33,11 +33,17 @@
 
         <activity android:name=".Activities.SettingsActivity" />
 
-        <activity android:name=".Activities.StatusActivity"
-            android:parentActivityName=".Activities.SettingsActivity"></activity>
+        <activity
+            android:name=".Activities.StatusActivity"
+            android:parentActivityName=".Activities.SettingsActivity" />
 
-        <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
-            android:theme="@style/Base.Theme.AppCompat"/>
+        <activity
+            android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
+            android:theme="@style/Base.Theme.AppCompat" />
+
+        <activity android:name=".Activities.AllUsersActivity"
+            android:parentActivityName=".Activities.MainActivity">
+        </activity>
     </application>
 
 </manifest>
