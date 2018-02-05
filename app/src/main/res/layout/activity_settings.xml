@@ -36,14 +36,14 @@
         android:layout_height="wrap_content" />
 
     <Button
-        android:id="@+id/btnChangeName"
+        android:id="@+id/btnChangeImage"
         android:backgroundTint="#FFFF"
         android:layout_gravity="center"
         android:paddingLeft="25dp"
         android:paddingRight="25dp"
         android:layout_marginTop="130dp"
         android:textColor="@color/colorPrimaryDark"
-        android:text="Change Name"
+        android:text="Change Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
