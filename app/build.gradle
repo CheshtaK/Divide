@@ -31,7 +31,7 @@ dependencies {
     implementation 'com.theartofdev.edmodo:android-image-cropper:2.6.+'
     implementation 'com.google.firebase:firebase-storage:11.0.4'
     implementation 'com.firebaseui:firebase-ui-database:2.3.0'
-    implementation 'com.iceteck.silicompressorr:silicompressor:2.1'
+    implementation 'id.zelory:compressor:2.1.0'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'

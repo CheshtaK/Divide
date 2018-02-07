@@ -80,7 +80,7 @@ public class MainActivity extends AppCompatActivity {
             startActivity(settingsIntent);
         }
 
-        if(item.getItemId() == R.id.btnMainSettings){
+        if(item.getItemId() == R.id.btnMainAll){
             Intent usersIntent = new Intent(MainActivity.this, AllUsersActivity.class);
             startActivity(usersIntent);
         }
