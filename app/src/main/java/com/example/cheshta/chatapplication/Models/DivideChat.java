@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication;
+package com.example.cheshta.chatapplication.Models;
 
 import android.app.Application;
 
