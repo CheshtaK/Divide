@@ -19,6 +19,7 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 
@@ -81,6 +82,7 @@ public class RegisterActivity extends AppCompatActivity {
 
                     FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
                     String id = currentUser.getUid();
+                    String deviceToken = FirebaseInstanceId.getInstance().getToken();
 
                     mDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(id);
 
@@ -89,6 +91,7 @@ public class RegisterActivity extends AppCompatActivity {
                     userMap.put("status", "Hi there, I'm using Divide Chat App");
                     userMap.put("image", "default");
                     userMap.put("thumb_image", "default");
+                    userMap.put("device_token", deviceToken);
 
                     mDatabase.setValue(userMap).addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
