@@ -1,5 +1,7 @@
 package com.example.cheshta.chatapplication.Activities;
 
+import android.content.Context;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -13,6 +15,9 @@ import com.example.cheshta.chatapplication.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.squareup.picasso.Picasso;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 
 public class AllUsersActivity extends AppCompatActivity {
     
@@ -52,6 +57,18 @@ public class AllUsersActivity extends AppCompatActivity {
             protected void populateViewHolder(UsersViewHolder viewHolder, Users model, int position) {
                 viewHolder.setDisplayName(model.getName());
                 viewHolder.setUserStatus(model.getStatus());
+                viewHolder.setUserImage(model.getThumb_image(), getApplicationContext());
+
+                final String id = getRef(position).getKey();
+
+                viewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent profileIntent = new Intent(AllUsersActivity.this, ProfileActivity.class);
+                        profileIntent.putExtra("id", id);
+                        startActivity(profileIntent);
+                    }
+                });
             }
         };
 
@@ -75,6 +92,11 @@ public class AllUsersActivity extends AppCompatActivity {
         public void setUserStatus(String status){
             TextView tvUsersStatus = mView.findViewById(R.id.tvUsersStatus);
             tvUsersStatus.setText(status);
+        }
+
+        public void setUserImage(String thumb_image, Context context){
+            CircleImageView civUsersImage = mView.findViewById(R.id.civUsersImage);
+            Picasso.with(context).load(thumb_image).placeholder(R.drawable.me).into(civUsersImage);
         }
     }
 }

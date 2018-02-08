@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimaryDark"
+    tools:context="com.example.cheshta.chatapplication.Activities.ProfileActivity">
+
+    <ImageView
+        android:id="@+id/ivProfileImage"
+        android:layout_width="match_parent"
+        android:src="@drawable/me"
+        android:layout_height="220dp" />
+
+    <TextView
+        android:id="@+id/tvProfileDisplayName"
+        android:text="Display Name"
+        android:layout_gravity="center"
+        android:layout_marginTop="26dp"
+        android:textSize="24sp"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvProfileStatus"
+        android:text="Current User Status"
+        android:layout_gravity="center"
+        android:layout_marginTop="12dp"
+        android:textSize="16sp"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/tvTotalFriends"
+        android:text="Total Friends"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:textSize="16sp"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnSendRequest"
+        android:layout_gravity="center"
+        android:text="send friend request"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:id="@+id/btnDecline"
+        android:layout_gravity="center"
+        android:text="decline friend request"
+        android:backgroundTint="@color/colorAccent"
+        android:textColor="#FFFF"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

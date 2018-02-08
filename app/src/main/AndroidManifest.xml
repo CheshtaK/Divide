@@ -20,30 +20,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity android:name=".Activities.StartActivity" />
-
         <activity
             android:name=".Activities.RegisterActivity"
             android:parentActivityName=".Activities.StartActivity" />
-
         <activity
             android:name=".Activities.LoginActivity"
             android:parentActivityName=".Activities.StartActivity" />
-
         <activity android:name=".Activities.SettingsActivity" />
-
         <activity
             android:name=".Activities.StatusActivity"
             android:parentActivityName=".Activities.SettingsActivity" />
-
         <activity
             android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Base.Theme.AppCompat" />
-
-        <activity android:name=".Activities.AllUsersActivity"
-            android:parentActivityName=".Activities.MainActivity">
-        </activity>
+        <activity
+            android:name=".Activities.AllUsersActivity"
+            android:parentActivityName=".Activities.MainActivity"></activity>
+        <activity android:name=".Activities.ProfileActivity"></activity>
     </application>
 
 </manifest>
