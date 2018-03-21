@@ -13,11 +13,16 @@ import com.example.cheshta.chatapplication.Adapters.SectionsPagerAdapter;
 import com.example.cheshta.chatapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ServerValue;
 
 public class MainActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     Toolbar mainPageToolbar;
+
+    private DatabaseReference mUserRef;
 
     ViewPager mainPager;
     SectionsPagerAdapter sectionsPagerAdapter;
@@ -33,6 +38,11 @@ public class MainActivity extends AppCompatActivity {
         mainPageToolbar = findViewById(R.id.mainPageToolbar);
         setSupportActionBar(mainPageToolbar);
         getSupportActionBar().setTitle("Divide Chat");
+
+
+        if (mAuth.getCurrentUser() != null) {
+            mUserRef = FirebaseDatabase.getInstance().getReference().child("Users").child(mAuth.getCurrentUser().getUid());
+        }
         
         mainPager = findViewById(R.id.vpMain);
         sectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -48,6 +58,21 @@ public class MainActivity extends AppCompatActivity {
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if(currentUser == null){
             sendToStart();
+        }
+        else {
+            mUserRef.child("online").setValue("true");
+        }
+    }
+
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        if(currentUser != null) {
+            mUserRef.child("online").setValue(ServerValue.TIMESTAMP);
         }
     }
 

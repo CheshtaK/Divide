@@ -8,6 +8,7 @@ android {
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -33,6 +34,7 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-database:2.3.0'
     implementation 'com.google.firebase:firebase-messaging:11.0.4'
     implementation 'id.zelory:compressor:2.1.0'
+    implementation 'com.android.support:multidex:1.0.1'
     implementation 'com.squareup.picasso:picasso:2.5.2'
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     testImplementation 'junit:junit:4.12'
@@ -40,17 +42,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 apply plugin: 'com.google.gms.google-services'

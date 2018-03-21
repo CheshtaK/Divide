@@ -13,7 +13,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
-        android:name=".Models.DivideChat">
+        android:name="android.support.multidex.MultiDexApplication">
 
         <service
             android:name=".Services.FirebaseMessagingService">
