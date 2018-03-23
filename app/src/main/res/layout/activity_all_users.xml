@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.cheshta.chatapplication.Activities.AllUsersActivity">
+    tools:context="com.example.cheshta.chatapplication.activities.AllUsersActivity">
 
     <include layout="@layout/app_bar_layout"
         android:layout_width="match_parent"

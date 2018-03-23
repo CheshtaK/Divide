@@ -1,7 +1,6 @@
-package com.example.cheshta.chatapplication.Activities;
+package com.example.cheshta.chatapplication.application;
 
 import android.app.Application;
-
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;

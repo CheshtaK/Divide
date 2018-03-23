@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.cheshta.chatapplication.Activities.RegisterActivity">
+    tools:context="com.example.cheshta.chatapplication.activities.RegisterActivity">
 
     <include
         android:id="@+id/registerToolbar"

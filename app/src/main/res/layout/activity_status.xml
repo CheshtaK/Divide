@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.cheshta.chatapplication.Activities.StatusActivity">
+    tools:context="com.example.cheshta.chatapplication.activities.StatusActivity">
 
     <include layout="@layout/app_bar_layout" android:id="@+id/statusToolbar"
         android:layout_width="match_parent"

@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Fragments;
+package com.example.cheshta.chatapplication.fragments;
 
 
 import android.os.Bundle;

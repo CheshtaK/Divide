@@ -1,10 +1,8 @@
-package com.example.cheshta.chatapplication.Models;
+package com.example.cheshta.chatapplication.models;
 
 import android.app.Application;
 
 import com.google.firebase.database.FirebaseDatabase;
-import com.squareup.picasso.OkHttpDownloader;
-import com.squareup.picasso.Picasso;
 
 /**
  * Created by chesh on 2/8/2018.

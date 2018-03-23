@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Fragments;
+package com.example.cheshta.chatapplication.fragments;
 
 
 import android.content.Context;
@@ -15,8 +15,9 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.cheshta.chatapplication.Activities.ProfileActivity;
-import com.example.cheshta.chatapplication.Models.Friends;
+import com.example.cheshta.chatapplication.activities.ChatActivity;
+import com.example.cheshta.chatapplication.activities.ProfileActivity;
+import com.example.cheshta.chatapplication.models.Friends;
 import com.example.cheshta.chatapplication.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -106,6 +107,34 @@ public class FriendsFragment extends Fragment {
 
                         friendsViewHolder.setName(userName);
                         friendsViewHolder.setUserImage(userThumb, getContext());
+
+                        friendsViewHolder.mView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View view) {
+                                CharSequence options[] = new CharSequence[]{"Open Profile", "Send message"};
+
+                                final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
+                                builder.setTitle("Select Options");
+                                builder.setItems(options, new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialogInterface, int i) {
+
+                                        if(i == 0){
+                                            Intent profileIntent = new Intent(getContext(), ProfileActivity.class);
+                                            profileIntent.putExtra("user_id", list_user_id);
+                                            startActivity(profileIntent);
+                                        }
+                                        if(i == 1){
+                                            Intent chatIntent = new Intent(getContext(), ChatActivity.class);
+                                            chatIntent.putExtra("user_id", list_user_id);
+                                            chatIntent.putExtra("user_name", userName);
+                                            startActivity(chatIntent);
+                                        }
+                                    }
+                                });
+                                builder.show();
+                            }
+                        });
                     }
 
                     @Override

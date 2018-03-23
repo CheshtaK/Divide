@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/colorPrimaryDark"
-    tools:context="com.example.cheshta.chatapplication.Activities.SettingsActivity">
+    tools:context="com.example.cheshta.chatapplication.activities.SettingsActivity">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/civSettingsImage"

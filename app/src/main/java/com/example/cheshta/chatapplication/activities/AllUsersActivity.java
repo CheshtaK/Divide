@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Activities;
+package com.example.cheshta.chatapplication.activities;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.TextView;
 
-import com.example.cheshta.chatapplication.Models.Users;
+import com.example.cheshta.chatapplication.models.Users;
 import com.example.cheshta.chatapplication.R;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.database.DatabaseReference;

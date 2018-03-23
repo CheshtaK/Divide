@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Activities;
+package com.example.cheshta.chatapplication.activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -29,14 +29,12 @@ import com.squareup.picasso.Callback;
 import com.squareup.picasso.NetworkPolicy;
 import com.squareup.picasso.Picasso;
 import com.theartofdev.edmodo.cropper.CropImage;
-import com.theartofdev.edmodo.cropper.CropImageView;
 
 import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Random;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 import id.zelory.compressor.Compressor;

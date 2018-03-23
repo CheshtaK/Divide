@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Activities;
+package com.example.cheshta.chatapplication.activities;
 
 import android.app.ProgressDialog;
 import android.support.annotation.NonNull;

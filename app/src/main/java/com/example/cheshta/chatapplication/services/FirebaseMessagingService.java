@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Services;
+package com.example.cheshta.chatapplication.services;
 
 import android.app.NotificationManager;
 import android.app.PendingIntent;

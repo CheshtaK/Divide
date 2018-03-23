@@ -1,12 +1,12 @@
-package com.example.cheshta.chatapplication.Adapters;
+package com.example.cheshta.chatapplication.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.example.cheshta.chatapplication.Fragments.ChatsFragment;
-import com.example.cheshta.chatapplication.Fragments.FriendsFragment;
-import com.example.cheshta.chatapplication.Fragments.RequestsFragment;
+import com.example.cheshta.chatapplication.fragments.ChatsFragment;
+import com.example.cheshta.chatapplication.fragments.FriendsFragment;
+import com.example.cheshta.chatapplication.fragments.RequestsFragment;
 
 /**
  * Created by chesh on 2/3/2018.

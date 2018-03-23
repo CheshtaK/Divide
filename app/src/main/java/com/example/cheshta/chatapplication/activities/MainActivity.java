@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Activities;
+package com.example.cheshta.chatapplication.activities;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
-import com.example.cheshta.chatapplication.Adapters.SectionsPagerAdapter;
+import com.example.cheshta.chatapplication.adapters.SectionsPagerAdapter;
 import com.example.cheshta.chatapplication.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

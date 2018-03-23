@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Activities;
+package com.example.cheshta.chatapplication.activities;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

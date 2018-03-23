@@ -1,4 +1,4 @@
-package com.example.cheshta.chatapplication.Models;
+package com.example.cheshta.chatapplication.models;
 
 /**
  * Created by chesh on 2/5/2018.
