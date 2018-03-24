@@ -1,13 +1,15 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.cheshta.chatapplication.fragments.ChatsFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvConversation"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Chat Page" />
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true">
+    </android.support.v7.widget.RecyclerView>
 
-</FrameLayout>
+</RelativeLayout>

@@ -30,9 +30,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     private DatabaseReference mUserDatabase;
 
     public MessageAdapter(List<Messages> mMessageList) {
-
         this.mMessageList = mMessageList;
-
     }
 
     @Override
@@ -42,7 +40,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
                 .inflate(R.layout.message_single_layout ,parent, false);
 
         return new MessageViewHolder(v);
-
     }
 
     public class MessageViewHolder extends RecyclerView.ViewHolder {
@@ -50,7 +47,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         public TextView tvMessage;
         public CircleImageView civMessageImage;
         public TextView tvMessageName;
-        public ImageView messageImage;
+        public ImageView ivMessageImage;
 
         public MessageViewHolder(View view) {
             super(view);
@@ -58,8 +55,7 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
             tvMessage = view.findViewById(R.id.tvMessage);
             civMessageImage = view.findViewById(R.id.civMessageImage);
             tvMessageName = view.findViewById(R.id.tvMessageName);
-            messageImage = (ImageView) view.findViewById(R.id.message_image_layout);
-
+            ivMessageImage = view.findViewById(R.id.ivMessageImage);
         }
     }
 
@@ -67,10 +63,8 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
     public void onBindViewHolder(final MessageViewHolder viewHolder, int i) {
 
         Messages c = mMessageList.get(i);
-
         String from_user = c.getFrom();
         String message_type = c.getType();
-
 
         mUserDatabase = FirebaseDatabase.getInstance().getReference().child("Users").child(from_user);
 
@@ -85,7 +79,6 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
 
                 Picasso.with(viewHolder.civMessageImage.getContext()).load(image)
                         .placeholder(R.drawable.me).into(viewHolder.civMessageImage);
-
             }
 
             @Override
@@ -95,17 +88,12 @@ public class MessageAdapter extends RecyclerView.Adapter<MessageAdapter.MessageV
         });
 
         if(message_type.equals("text")) {
-
             viewHolder.tvMessage.setText(c.getMessage());
-            viewHolder.messageImage.setVisibility(View.INVISIBLE);
-
-
+            viewHolder.ivMessageImage.setVisibility(View.INVISIBLE);
         } else {
-
             viewHolder.tvMessage.setVisibility(View.INVISIBLE);
             Picasso.with(viewHolder.civMessageImage.getContext()).load(c.getMessage())
-                    .placeholder(R.drawable.me).into(viewHolder.messageImage);
-
+                    .placeholder(R.drawable.me).into(viewHolder.ivMessageImage);
         }
 
     }
