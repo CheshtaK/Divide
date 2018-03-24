@@ -66,6 +66,13 @@ public class ChatActivity extends AppCompatActivity {
 
     private String mCurrentUserId;
 
+    private static final int TOTAL_ITEMS_TO_LOAD = 10;
+    private int mCurrentPage = 1;
+
+    private int itemPos = 0;
+    private String mLastKey = "";
+    private String mPrevKey = "";
+
     private static final int GALLERY_PICK = 1;
 
     @Override
@@ -195,17 +202,89 @@ public class ChatActivity extends AppCompatActivity {
 
             }
         });
+
+        srlChat.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                mCurrentPage++;
+                itemPos = 0;
+                loadMoreMessages();
+            }
+        });
+    }
+
+
+    private void loadMoreMessages() {
+
+        DatabaseReference messageRef = mRootRef.child("messages").child(mCurrentUserId).child(mChatUser);
+        Query messageQuery = messageRef.orderByKey().endAt(mLastKey).limitToLast(10);
+
+        messageQuery.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                Messages message = dataSnapshot.getValue(Messages.class);
+                String messageKey = dataSnapshot.getKey();
+
+                if(!mPrevKey.equals(messageKey)){
+                    messagesList.add(itemPos++, message);
+                }
+                else {
+                    mPrevKey = mLastKey;
+                }
+
+                if(itemPos == 1) {
+                    mLastKey = messageKey;
+                }
+                Log.d("TOTALKEYS", "Last Key : " + mLastKey + " | Prev Key : " + mPrevKey + " | Message Key : " + messageKey);
+
+                mAdapter.notifyDataSetChanged();
+                srlChat.setRefreshing(false);
+                mLinearLayout.scrollToPositionWithOffset(10, 0);
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void loadMessages() {
 
-        mRootRef.child("messages").child(mCurrentUserId).child(mChatUser).addChildEventListener(new ChildEventListener() {
+        DatabaseReference messageRef = mRootRef.child("messages").child(mCurrentUserId).child(mChatUser);
+        Query messageQuery = messageRef.limitToLast(mCurrentPage * TOTAL_ITEMS_TO_LOAD);
+
+        messageQuery.addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(DataSnapshot dataSnapshot, String s) {
                 Messages message = dataSnapshot.getValue(Messages.class);
 
+                itemPos++;
+                if(itemPos == 1){
+                    String messageKey = dataSnapshot.getKey();
+                    mLastKey = messageKey;
+                    mPrevKey = messageKey;
+                }
+
                 messagesList.add(message);
                 mAdapter.notifyDataSetChanged();
+                rvMessages.scrollToPosition(messagesList.size() - 1);
+                srlChat.setRefreshing(false);
             }
 
             @Override
