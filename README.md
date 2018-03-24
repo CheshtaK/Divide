@@ -1,5 +1,5 @@
 # Divide Chat App 
-A chat app that allows one to one chatting facility alongwith the option to send friend requests as well as change one's status and profile picture.
+A chat app that allows one to one chatting facility alongwith the option to send friend requests as well as change one's status and profile picture. It uses various Firebase capabilities to implement the above mentioned functionalities.
 
 ### App icon
 ![ic_launcher-web](https://user-images.githubusercontent.com/32400008/37865663-cc90887e-2fa5-11e8-9625-bb49cc2b4eff.png) 
@@ -39,3 +39,32 @@ A chat app that allows one to one chatting facility alongwith the option to send
 ![screenshot_20180324-221446](https://user-images.githubusercontent.com/32400008/37866460-f787e5ee-2fb0-11e8-9d13-63d74a1f1a72.jpg)
 ![screenshot_20180324-221542](https://user-images.githubusercontent.com/32400008/37866459-f74ab9d0-2fb0-11e8-8b8f-bf311212cafb.jpg)
 ![screenshot_20180324-221452](https://user-images.githubusercontent.com/32400008/37866458-f70cce18-2fb0-11e8-87f5-c1d0ff898229.jpg)
+
+### 7. Friend Request Feature
+
+#### Logged in as Jane Doe
+![screenshot_20180324-224741](https://user-images.githubusercontent.com/32400008/37866791-6cc30af6-2fb5-11e8-8ce7-e4e7e0c4062f.jpg)
+![screenshot_20180324-224747](https://user-images.githubusercontent.com/32400008/37866792-6d0753e6-2fb5-11e8-89cb-3e6bdca16b99.jpg)
+
+
+#### Logged in as John Doe
+![screenshot_20180324-225129](https://user-images.githubusercontent.com/32400008/37866953-a4db8984-2fb7-11e8-8d3a-2707469e40ad.jpg)
+
+#### **On accepting
+![screenshot_20180324-225153](https://user-images.githubusercontent.com/32400008/37866950-a4134596-2fb7-11e8-8f2f-ef489f02e861.jpg)
+![screenshot_20180324-225720](https://user-images.githubusercontent.com/32400008/37866952-a497c262-2fb7-11e8-86b4-051153daa4c8.jpg)   
+
+#### ***On unfriending
+![screenshot_20180324-225643](https://user-images.githubusercontent.com/32400008/37866951-a455d672-2fb7-11e8-9dba-b898ab659ba9.jpg)
+
+
+### 8. Online and Last Seen Feature
+
+Online | Offline
+--- | ---
+![screenshot_20180324-231828](https://user-images.githubusercontent.com/32400008/37867419-2529a4da-2fbe-11e8-9db9-51c0ead2d396.jpg)| ![screenshot_20180324-231840](https://user-images.githubusercontent.com/32400008/37867420-2570dbd4-2fbe-11e8-82dc-7957825502df.jpg)
+
+#### Last Seen 
+![screenshot_20180324-232334](https://user-images.githubusercontent.com/32400008/37867478-497202fa-2fbf-11e8-9a1d-38136c5b7304.jpg)
+![screenshot_20180324-232937](https://user-images.githubusercontent.com/32400008/37867479-49a5cb08-2fbf-11e8-8ba5-2f4a61d56199.jpg)
+![screenshot_20180324-235843](https://user-images.githubusercontent.com/32400008/37867492-6a6b7752-2fbf-11e8-8e12-8185f0b1e81c.jpg)
