@@ -41,7 +41,7 @@
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/tvUsersName"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="5dp"
         android:layout_toEndOf="@+id/tvUsersName"
         android:src="@drawable/online"
         android:visibility="invisible"

@@ -104,7 +104,7 @@ public class ProfileActivity extends AppCompatActivity {
                         if(dataSnapshot.hasChild(id)){
 
                             String requestType = dataSnapshot.child(id).child("request_type").getValue().toString();
-                            if(requestType.equals("received")){
+                            if(requestType.equals("Received")){
 
                                 mCurrentState = 2;
                                 btnSendRequest.setText("Accept Friend Request");
@@ -112,7 +112,7 @@ public class ProfileActivity extends AppCompatActivity {
                                 btnDecline.setVisibility(View.VISIBLE);
                                 btnDecline.setEnabled(true);
 
-                            } else if(requestType.equals("sent")){
+                            } else if(requestType.equals("Sent")){
 
                                 mCurrentState = 1;
                                 btnSendRequest.setText("Cancel Friend Request");
@@ -183,8 +183,8 @@ public class ProfileActivity extends AppCompatActivity {
                     notificationData.put("type", "request");
 
                     Map requestMap = new HashMap();
-                    requestMap.put("Friend_req/" + mCurrentUser.getUid() + "/" + id + "/request_type","sent");
-                    requestMap.put("Friend_req/" + id + "/" + mCurrentUser.getUid() + "/request_type","received");
+                    requestMap.put("Friend_req/" + mCurrentUser.getUid() + "/" + id + "/request_type","Sent");
+                    requestMap.put("Friend_req/" + id + "/" + mCurrentUser.getUid() + "/request_type","Received");
                     requestMap.put("notifications/" + id + "/" + newNotificationId, notificationData);
 
                     mRootRef.updateChildren(requestMap, new DatabaseReference.CompletionListener() {

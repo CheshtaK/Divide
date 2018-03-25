@@ -84,7 +84,6 @@ public class SettingsActivity extends AppCompatActivity {
                 tvSettingsStatus.setText(status);
 
                 if(!image.equals("default")){
-//                    Picasso.with(SettingsActivity.this).load(image).placeholder(R.drawable.me).into(civSettingsImage);
 
                     Picasso.with(SettingsActivity.this).load(image).networkPolicy(NetworkPolicy.OFFLINE)
                             .placeholder(R.drawable.me).into(civSettingsImage, new Callback() {
@@ -125,10 +124,6 @@ public class SettingsActivity extends AppCompatActivity {
                 galleryIntent.setAction(Intent.ACTION_GET_CONTENT);
 
                 startActivityForResult(Intent.createChooser(galleryIntent, "SELECT IMAGE"), GALLERY_PICK);
-
-                /*CropImage.activity()
-                        .setGuidelines(CropImageView.Guidelines.ON)
-                        .start(SettingsActivity.this);*/
             }
         });
     }
@@ -198,7 +193,7 @@ public class SettingsActivity extends AppCompatActivity {
                                         updateHashmap.put("image", download_url);
                                         updateHashmap.put("thumb_image", thumbDownload_url);
 
-                                        mUserDatabase.setValue(updateHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
+                                        mUserDatabase.updateChildren(updateHashmap).addOnCompleteListener(new OnCompleteListener<Void>() {
                                             @Override
                                             public void onComplete(@NonNull Task<Void> task) {
                                                 if(task.isSuccessful()){

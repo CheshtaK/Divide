@@ -78,13 +78,10 @@ public class FriendsFragment extends Fragment {
         super.onStart();
 
         FirebaseRecyclerAdapter<Friends, FriendsViewHolder> friendsRecyclerViewAdapter = new FirebaseRecyclerAdapter<Friends, FriendsViewHolder>(
-
                 Friends.class,
                 R.layout.single_user_layout,
                 FriendsViewHolder.class,
                 mFriendsDatabase
-
-
         ) {
             @Override
             protected void populateViewHolder(final FriendsViewHolder friendsViewHolder, Friends friends, int i) {
@@ -121,7 +118,7 @@ public class FriendsFragment extends Fragment {
 
                                         if(i == 0){
                                             Intent profileIntent = new Intent(getContext(), ProfileActivity.class);
-                                            profileIntent.putExtra("user_id", list_user_id);
+                                            profileIntent.putExtra("id", list_user_id);
                                             startActivity(profileIntent);
                                         }
                                         if(i == 1){

@@ -5,7 +5,7 @@ package com.example.cheshta.chatapplication.models;
  */
 
 public class Friends {
-    public String date;
+    private String date;
 
     public Friends(){
 
