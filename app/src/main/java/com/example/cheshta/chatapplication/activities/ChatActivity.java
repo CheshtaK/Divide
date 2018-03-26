@@ -116,7 +116,7 @@ public class ChatActivity extends AppCompatActivity {
         srlChat = findViewById(R.id.srlChat);
         rvMessages = findViewById(R.id.rvMessages);
 
-        mAdapter = new MessageAdapter(messagesList);
+        mAdapter = new MessageAdapter(this,messagesList,mCurrentUserId,mChatUser);
 
         rvMessages = findViewById(R.id.rvMessages);
         srlChat = findViewById(R.id.srlChat);
@@ -234,8 +234,6 @@ public class ChatActivity extends AppCompatActivity {
                     .child(mCurrentUserId).child(mChatUser).push();
 
             final String push_id = user_message_push.getKey();
-
-
             StorageReference filepath = mImageStorage.child("message_images").child( push_id + ".jpg");
 
             filepath.putFile(imageUri).addOnCompleteListener(new OnCompleteListener<UploadTask.TaskSnapshot>() {
@@ -243,9 +241,7 @@ public class ChatActivity extends AppCompatActivity {
                 public void onComplete(@NonNull Task<UploadTask.TaskSnapshot> task) {
 
                     if(task.isSuccessful()){
-
                         String download_url = task.getResult().getDownloadUrl().toString();
-
 
                         Map messageMap = new HashMap();
                         messageMap.put("message", download_url);

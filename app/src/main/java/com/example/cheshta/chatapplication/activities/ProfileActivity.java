@@ -13,6 +13,7 @@ import com.example.cheshta.chatapplication.R;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -32,6 +33,8 @@ public class ProfileActivity extends AppCompatActivity {
     Button btnSendRequest, btnDecline;
     ProgressDialog mProgressDialog;
 
+    int totalFriends = 0;
+
     int mCurrentState;
     /* 0 -> Not Friends
      * 1 -> Friend Request Sent
@@ -39,7 +42,7 @@ public class ProfileActivity extends AppCompatActivity {
      * 3 -> Friends
      */
 
-    DatabaseReference mUsersDatabase, mFriendReqDatabase, mFriendDatabase, mNotificationDatabase, mRootRef;
+    DatabaseReference mUsersDatabase, mFriendReqDatabase, mFriendDatabase, mNotificationDatabase, mRootRef, mTotalChild;
     FirebaseUser mCurrentUser;
 
     @Override
@@ -73,6 +76,38 @@ public class ProfileActivity extends AppCompatActivity {
         mProgressDialog.setMessage("Please wait while we load the user data");
         mProgressDialog.setCanceledOnTouchOutside(false);
         mProgressDialog.show();
+
+        mTotalChild = FirebaseDatabase.getInstance().getReference().child("Friends").child(id);
+        mTotalChild.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(DataSnapshot dataSnapshot, String s) {
+                totalFriends = (int) dataSnapshot.getChildrenCount();
+                tvTotalFriends.setText(totalFriends + " Friends");
+            }
+
+            @Override
+            public void onChildChanged(DataSnapshot dataSnapshot, String s) {
+                totalFriends = (int) dataSnapshot.getChildrenCount();
+                tvTotalFriends.setText(totalFriends + " Friends");
+            }
+
+            @Override
+            public void onChildRemoved(DataSnapshot dataSnapshot) {
+                totalFriends = (int) dataSnapshot.getChildrenCount();
+                tvTotalFriends.setText(totalFriends + " Friends");
+            }
+
+            @Override
+            public void onChildMoved(DataSnapshot dataSnapshot, String s) {
+                totalFriends = (int) dataSnapshot.getChildrenCount();
+                tvTotalFriends.setText(totalFriends + " Friends");
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
 
         mUsersDatabase.addValueEventListener(new ValueEventListener() {
             @Override

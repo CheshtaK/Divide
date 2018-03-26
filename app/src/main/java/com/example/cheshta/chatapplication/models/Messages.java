@@ -7,7 +7,7 @@ package com.example.cheshta.chatapplication.models;
 public class Messages {
 
     private String message, type;
-    private long  time;
+    private long time;
     private boolean seen;
 
     private String from;
